@@ -11,6 +11,10 @@ A simple redirection to gitx for use as a git sub-command.
 
 A tool to add the current (or specified) identity's public `gpg` key to a git repository as a self signed tag.
 
+## gpgkey-import.tool
+
+Import gpg keys stored in a repository as tags that take the form of `refs/tags/pubkeys/*` or `refs/tags/pubkey`.
+
 
 ## update.tool
 

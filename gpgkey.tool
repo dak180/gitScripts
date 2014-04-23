@@ -24,3 +24,5 @@ Fingerprint: ${LongKeyIdRead}
 EOF
 
 git tag -v "pubkeys/${ShortKeyId}"
+
+exit ${?}
