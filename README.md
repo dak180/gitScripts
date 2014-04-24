@@ -15,6 +15,9 @@ A tool to add the current (or specified) identity's public `gpg` key to a git re
 
 Import gpg keys stored in a repository as tags that take the form of `refs/tags/pubkeys/*` or `refs/tags/pubkey`.
 
+## mpush.tool
+
+Push to multiple repositories at once; uses `remotes.main` and `remotes.me` to list push locations
 
 ## update.tool
 
