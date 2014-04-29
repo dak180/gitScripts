@@ -3,6 +3,11 @@
 
 Custom git sub-commands.
 
+## action-stamp.tool
+
+Outputs an action stamp for the specified commit or `HEAD`.
+See http://esr.ibiblio.org/?p=3872 for action stamp specification.
+
 ## gitx.tool
 
 A simple redirection to gitx for use as a git sub-command.
