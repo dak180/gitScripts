@@ -21,6 +21,7 @@ fi
 
 
 for PushRemote in ${PushList}; do
+	echo "Pushing ${PushRemote}"
 	if ! git push "${PushRemote}"; then
 		echo "warning: push to ${PushRemote} failed"
 		git fetch --multiple -p "${PushRemote}"
