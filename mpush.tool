@@ -11,7 +11,7 @@ if [ -z "${RemotesMain}" ] && [ -z "${RemotesMe}" ] && [ -z "${OriginFallBack}" 
 	echo "Nowhere to push to"
 	exit 1
 elif [ -z "${RemotesMain}" ] && [ -z "${RemotesMe}" ]; then
-	git push origin
+	git push --signed origin
 	exit ${?}
 elif [ -z "${RemotesMain}" ]; then
 	PushList="${RemotesMe}"
@@ -23,7 +23,7 @@ fi
 for PushRemote in ${PushList}; do
 	if [ ! -z "$(git config --get remote.${PushRemote}.pushurl 2>/dev/null)" ]; then
 		echo "Pushing ${PushRemote}"
-		if ! git push "${PushRemote}"; then
+		if ! git push --signed "${PushRemote}"; then
 			echo "warning: push to ${PushRemote} failed"
 			git fetch --multiple -p "${PushRemote}"
 			exit 1
