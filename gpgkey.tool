@@ -6,7 +6,7 @@ GitPath="$(git rev-parse --show-toplevel)"
 : "${GpgId:="$(git config --get user.signingkey)"}"
 GitUserEmail="$(git config --get user.email)"
 : "${GpgId:="${GitUserEmail}"}"
-LongKeyId="$(gpg --with-fingerprint --with-colons --fixed-list-mode --list-keys "${GpgId}" | grep 'fpr' | cut -f 10 -d :)"
+LongKeyId="$(gpg --with-fingerprint --with-colons --fixed-list-mode --list-keys "${GpgId}" | grep -m '1' 'fpr' | cut -f 10 -d :)"
 LongKeyIdRead="$(sed -e 's:....:& :g' <<< "${LongKeyId}" | sed -e 's: $::')"
 ShortKeyId="${LongKeyId: -8}"
 
